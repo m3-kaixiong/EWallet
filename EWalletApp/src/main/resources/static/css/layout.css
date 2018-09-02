@@ -1,0 +1,50 @@
+@media screen and (min-width: 768px) {
+	body > :first-child {
+		min-height: 100%;
+	}
+	
+	html, body {
+		height: 100%
+	}
+	
+	body > :first-child {
+		border-left: 1px solid #e9ecef;
+		border-right: 1px solid #e9ecef;
+	}
+}
+
+.display-5 {
+	font-size: 2.0rem;
+	font-weight: 300;
+	line-height: 1.1;	
+}
+
+.display-6 {
+	font-size: 1.5rem;
+	font-weight: 300;
+	line-height: 1.1;	
+}
+
+.btn-primary {
+	background-color: #09a5d2;
+	border-color: #09a5d2;
+}
+
+.btn-primary:hover {
+	background-color: #0798c1;
+	border-color: #0798c1;
+}
+
+.btn-outline-primary {
+	color: #09a5d2;
+	border-color: #09a5d2;
+}
+
+.btn-outline-primary:hover {
+	background-color: #0798c1;
+	border-color: #0798c1;
+}
+
+.text-primary {
+	color: #09a5d2 !important;	
+}

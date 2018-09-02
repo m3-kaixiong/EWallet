@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    	<!-- Bootstrap CSS -->
+    	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+    	<link rel="stylesheet" href="css/layout.css"/>
+	</head>
+	
+	<body>
+		<div class="container col-12 col-md-6 col-lg-4 d-flex flex-column" id="body-container">
+			<div class="row justify-content-center mt-3" th:fragment="header">
+				<img src="images/mpm_logo.png" alt="MPM Logo"/>
+			</div>
+			
+			<div class="row justify-content-center text-center">
+				<div class="col-10 mt-5">
+					<h1 class="display-5">Balance</h1>
+				</div>
+				
+				<div class="col-10 my-3 mb-3">
+					<h1 class="display-3 text-primary" th:text="'$'+${#numbers.formatDecimal(wallet.balance,1,2)}">$10.00</h1>
+				</div>
+			
+				<div class="col-10 mb-4 justify-content-center">
+					<hr/>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center text-center" th:if="${lastTxn}">
+				<div class="col-10 text-center justify-content-center">
+					<h1 class="display-6">Last purchased product</h1>
+				</div>
+				
+				<div class="col-6 my-3">
+					<img th:src="${lastTxn.product.imgSrc}" src="images/products/product1_sqr.jpg" class="img-fluid img-thumbnail mx-auto d-block" alt="Product Image"/>
+				</div>
+				
+				<div class="col-10 justify-content-center text-center">
+					<h5 th:text="${lastTxn.product.name}">Product Name</h5>
+					<h6 th:text="'$'+${#numbers.formatDecimal(lastTxn.product.price,1,2)}">$20</h6>
+					<small th:text="'from ' +${lastTxn.product.merchant}">
+						from Merchant Name
+					</small> 
+					<br/>
+					<small th:text="'on ' +${#dates.format(lastTxn.txnDateTime, 'dd MMM yyyy HH:mm')}">
+						on 24 Aug 2017 14:12
+					</small>
+				</div>
+				
+				<div class="col-10 mt-3 mb-5 text-center">
+					<button type="button" class="btn btn-outline-primary">View transaction history</button>
+				</div>
+			</div>
+				
+			<div class="row justify-content-center text-center" th:unless="${lastTxn}">
+				<div class="col-12 mb-5">
+					<h1 class="display-6">No past transactions</h1>
+				</div>
+			</div>
+			
+			<div class="row mb-3 justify-content-center text-center">
+				<div class="col-10 mb-5">
+		    		<button type="button" class="btn btn-primary" data-toggle="modal">Top up</button>
+		    	</div>
+			</div>
+	   </div>
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    <script src="js/jquery-3.2.1.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	    <script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
