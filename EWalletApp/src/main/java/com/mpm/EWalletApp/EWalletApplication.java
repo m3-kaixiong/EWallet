@@ -1,13 +1,14 @@
 package com.mpm.EWalletApp;
 
-/**
- * Hello world!
- *
- */
-public class EWalletApplication 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
+
+@SpringBootApplication
+public class EWalletApplication  extends SpringBootServletInitializer
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+    	SpringApplication.run(EWalletApplication.class, args);
     }
 }

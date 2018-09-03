@@ -21,13 +21,13 @@
 					<img th:src="'../' +${product.imgSrc}" src="../images/products/product1_sqr.jpg" class="img-fluid img-thumbnail mx-auto d-block" alt="Product Image"/>
 				</div>
 			    <div class="col-12">
-			      <h5 th:text="${product.name}">Product Name</h5>
+			      <h5 th:text="${product.prodName}">Product Name</h5>
 			    </div>
 			    <div class="col-12">
-			      <h6 th:text="'$'+${#numbers.formatDecimal(product.price,1,2)}">$20</h6>
+			      <h6 th:text="'$'+${#numbers.formatDecimal(product.prodPrice,1,2)}">$20</h6>
 			    </div>
 			    <div class="col-10 mt-2 mb-2">
-					<p th:text="${product.description}">
+					<p th:text="${product.prodDes}">
 						Product description.
 					</p>
 				</div>
@@ -58,12 +58,12 @@
 					    	</div>
 					    	<div class="col-10 col-md-7 justify-content-center">
 					    		<div class="col-md-12 d-md-none text-center mt-3">
-						    		<h5 th:text="${product.name}">Product Name</h5>
-						    		<h4 th:text="'$'+${#numbers.formatDecimal(product.price,1,2)}">$20</h4>
+						    		<h5 th:text="${product.prodName}">Product Name</h5>
+						    		<h4 th:text="'$'+${#numbers.formatDecimal(product.prodPrice,1,2)}">$20</h4>
 					    		</div>
 					    		<div class="col-12 d-none d-md-block">
-						    		<h5 th:text="${product.name}">Product Name</h5>
-						    		<h4 th:text="'$'+${#numbers.formatDecimal(product.price,1,2)}">$20</h4>
+						    		<h5 th:text="${product.prodName}">Product Name</h5>
+						    		<h4 th:text="'$'+${#numbers.formatDecimal(product.prodPrice,1,2)}">$20</h4>
 					    		</div>
 					    	</div>
 					    </div>
@@ -73,7 +73,7 @@
 						<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">Cancel</button>
 						<form method="POST" th:action="@{/txn}" action="">
-							<input id="productId" name="productId" type="hidden" value="0" th:value="${product.id}"/>
+							<input id="productId" name="productId" type="hidden" value="0" th:value="${product.prodId}"/>
 							<button type="submit" class="btn btn-primary">Buy Now</button>
 						</form>
 					</div>

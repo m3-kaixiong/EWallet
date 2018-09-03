@@ -21,8 +21,8 @@ public class Product {
 		this.prodName = prodName;
 		this.prodPrice = prodPrice;
 		this.prodDes = prodDes;
-		this.imgSrc = "images/products/pictures" + imgFileName;
-		this.qrCode = "images/products/qrcodes" + qrCodeName;
+		this.imgSrc = "images/products/" + imgFileName;
+		this.qrCode = "images/products/" + qrCodeName;
 		this.merchant = merchant;
 	}
 

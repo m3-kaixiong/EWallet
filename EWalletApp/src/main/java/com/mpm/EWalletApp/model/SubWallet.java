@@ -1,8 +1,10 @@
 package com.mpm.EWalletApp.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.mpm.EWalletApp.Controller.EWalletAppController;
+
 
 public class SubWallet extends Wallet {
 
@@ -13,6 +15,8 @@ public class SubWallet extends Wallet {
 
 	public SubWallet(int walletId, String custName) {
 		super(walletId, custName);
+		
+		txnHistory = new ArrayList<Transactions>();
 	}
 
 
